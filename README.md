@@ -19,5 +19,15 @@ DATA
 
 There is a subreddit called Random Acts of Amazon (www.reddit.com/r/raoa) where redditors publish their amazon wishlists and other redditors gift them things from the wishlist. There are around 800 users in the database and inactive users on the subreddit are dropped from the database after 30 days of inactivity. The database is available online and all the information is voluntarily provided by the users of the subreddit.
 
-After contacting the mods or r/raoa, I was able to gather an SQL dump of the latest database. This data is just a list of SQL insert queries and is available publicly on the web. I have the permission to use this data for this project from the mods. There is also a terms and conditions page on the subreddit that states that the wishlists that are provided on the subreddit will draw a relationship between your reddit username and Amazon account. 
+After contacting the mods or r/raoa, I was able to gather an SQL dump of the latest database. This data is just a list of SQL insert queries and is available publicly on the web. I have the permission to use this data for this project from the mods. There is also a terms and conditions page on the subreddit that states that the wishlists that are provided on the subreddit will draw a relationship between your reddit username and Amazon account. Indeed, if this information was not public, the whole point of the subreddit would be negated. Once the tool is published, I want to observe how many more people volunteer more information and see how our dataset can grow with a non comercialized crowdsourcing approach.
+
+I plan on using Python to extract the data itself from the SQL dumps so that it is easier to manipulate. I will maily use Pandas to store the data as it is not very large. I will use the Python Reddit API to access the Reddit usernames.
+
+METHODOLOGY
+
+I plan on creating using a jaccard similarity model to measure the similarity between the user of the tool and the existing database of redditors. My theory is that reditors who comment on similar subreddits will have similar tastes. I will normalize the data by removing the default subreddits so that only the subreddits that someone has actuvley commented on turns up in the data. This way we will be able to identify the unique combinations of subreddits and the jaccard similarity will nto be lost be everyone commenting on the same default subreddits.
+
+Human Centered Approach
+
+I want to encourage people to reccomend things to complete strangers and observe if the gratificatin of finding cool stuff creates the same kind of bond that I felt with my Japanese wanderer. I also want to observe if the gratification of sharing things and getting positive feedback is incentive enough to crowdsource a dataset. 
 
